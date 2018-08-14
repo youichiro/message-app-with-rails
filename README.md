@@ -1,24 +1,47 @@
-# README
+# 実行環境
+- Ruby 2.4.2
+- Rails 5.2.1
+- MySQL 5.7
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 実行手順
 
-Things you may want to cover:
+- クローン
 
-* Ruby version
+```
+git clone git@github.com:youichiro/message-app-with-django.git
+cd message-app-with-rails
+```
 
-* System dependencies
+- データベースの作成
 
-* Configuration
+```
+mysql -u root -p
+> create database message_app_with_rails_development
+```
 
-* Database creation
+- Gemのインストール
 
-* Database initialization
+```
+bundle install --path vendor/bundle
+```
 
-* How to run the test suite
+- データベースの設定
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+cp config/database.yml.example config/database.yml
+# config/database.ymlのpasswordを記入する
+```
 
-* Deployment instructions
+- マイグレーション
 
-* ...
+```
+bundle exec rails db:migrate
+```
+
+- 起動
+
+```
+bundle exec rails s
+# localhost:3000/viewを開く
+```
+
