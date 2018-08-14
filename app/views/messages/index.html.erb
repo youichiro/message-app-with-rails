@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Messages</h1>
+
+<% @messages.each do |message| %>
+  <p><%= message.text %></p>
+<% end %>
+
+<br>
+
+<%= link_to 'New Message', form_path %>
