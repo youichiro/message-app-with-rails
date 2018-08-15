@@ -1,6 +1,6 @@
 ## Railsのインストール
 
-```
+```sh
 mkdir message-app-with-rails
 cd message-app-with-rails
 bundle init
@@ -10,11 +10,12 @@ bundle install --path vendor/bundle
 
 ## プロジェクトの作成
 
-```
+```sh
 bundle exec rails new . -d mysql
 ```
 
 ## データベースの設定
+**config/database.yml**
 
 ```config/database.yml
 default: &default
@@ -34,17 +35,18 @@ development:
 
 ## scaffold
 
-```
+```sh
 bundle exec rails g scaffold messages text:text
 ```
 
 ## マイグレーション
 
-```
+```sh
 bundle exec rails db:migrate
 ```
 
 ## ルーティングの変更
+**config/routes.rb**
 
 ```config/routes.rb
 Rails.application.routes.draw do
@@ -56,6 +58,7 @@ end
 ```
 
 ## viewsの変更
+**app/views/messages/index.html.erb**
 
 ```app/views/messages/index.html.erb
 <p id="notice"><%= notice %></p>
@@ -69,6 +72,8 @@ end
 <%= link_to 'New Message', form_path %>
 ```
 
+**app/views/messages/new.html.erb**
+
 ```app/views/messages/new.html.erb
 <h1>New Message</h1>
 
@@ -79,6 +84,6 @@ end
 
 ## 起動
 
-```
+```sh
 bundle exec rails s
 ```
