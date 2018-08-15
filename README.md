@@ -50,3 +50,6 @@ bundle exec rails s
 # localhost:3000/viewを開く
 ```
 
+<br>
+
+[実装手順](https://github.com/youichiro/message-app-with-rails/blob/master/recipe.md)
